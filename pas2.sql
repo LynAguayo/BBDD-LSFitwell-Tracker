@@ -36,7 +36,7 @@ BEGIN
         tipus_activitat,
         calories,
         dispositiu,
-        (DAYOFWEEK(data_activitat) = 1 OR (DAYOFWEEK(data_activitat) = 7) AS es_cap_setmana
+        (DAYOFWEEK(data_activitat) = 1) OR (DAYOFWEEK(data_activitat) = 7) AS es_cap_setmana
     FROM 
         activitats_raw
     WHERE 
@@ -51,6 +51,7 @@ BEGIN
 END //
 DELIMITER ;
 
---CALL netejar_dades_activitat();
 
---SELECT * FROM activitats_net;
+-- CALL netejar_dades_activitat();
+
+-- SELECT * FROM activitats_net;

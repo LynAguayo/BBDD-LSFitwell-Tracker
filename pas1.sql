@@ -14,7 +14,7 @@ CREATE TABLE activitats_raw (
 );
 
 -- Cargar los datos del archivo CSV
-LOAD DATA INFILE '/activitats.csv'
+LOAD DATA INFILE '"C:/Users/level/Desktop/BBDD-Trigger i eventos/activitats.csv"'
 INTO TABLE activitats_raw
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'
@@ -22,5 +22,5 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS; -- ignoramos la primera línea
 
 -- Verificar que los datos se cargaron correctamente
---SELECT COUNT(*) AS total_registres FROM activitats_raw;
---SELECT * FROM activitats_raw LIMIT 5;
+-- SELECT COUNT(*) AS total_registres FROM activitats_raw;
+-- SELECT * FROM activitats_raw LIMIT 5;
