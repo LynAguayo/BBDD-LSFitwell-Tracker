@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS activitats_net;
 CREATE TABLE activitats_net (
     id_registre INT AUTO_INCREMENT PRIMARY KEY,
     id_usuari INT NOT NULL,
