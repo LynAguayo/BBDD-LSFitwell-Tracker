@@ -18,10 +18,13 @@ INSERT INTO MD_activitat (nom, descripcio) VALUES
 
 -- Modificar activitats_net
 ALTER TABLE activitats_net  
-    DROP COLUMN tipus_activitat;
+    ADD COLUMN id_activitat INT;  -- Agregar la nueva columna para la clave foránea
 
--- Afegir el nou camp i clau forana
+-- Afegir la clau forana a la nova columna
 ALTER TABLE activitats_net
-    ADD id_activitat INT,
     ADD CONSTRAINT fk_tipus_activitat FOREIGN KEY (id_activitat) REFERENCES MD_activitat(id_activitat);
 
+-- Actualitzar la columna id_activitat basada en tipus_activitat
+UPDATE activitats_net an
+JOIN MD_activitat ma ON an.tipus_activitat = ma.nom
+SET an.id_activitat = ma.id_activitat;
