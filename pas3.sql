@@ -57,12 +57,12 @@ END $$
 DELIMITER ;
 
 DELIMITER $$
-
+DROP PROCEDURE exportar_control_carregues$$
 CREATE PROCEDURE exportar_control_carregues()
 BEGIN
     SET @query = "
         SELECT * FROM control_carregues 
-        INTO OUTFILE '/var/lib/mysql-files/control_carregues.csv'
+        INTO OUTFILE 'C:/Users/ALESA/Desktop/DAM/BBDD/BBDD-LSFitwell-Tracker/control_carregues.csv'
         FIELDS TERMINATED BY ',' 
         ENCLOSED BY '\"' 
         LINES TERMINATED BY '\n'
