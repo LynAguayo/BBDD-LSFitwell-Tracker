@@ -17,3 +17,16 @@ BEGIN
 END $$
 
 DELIMITER ;
+
+-- Carregar les dades del CSV 
+LOAD DATA INFILE '"C:/Users/level/Desktop/BBDD-Trigger i eventos/activitats2.csv"'
+INTO TABLE activitats_net
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS; -- ignoramos la primera línea
+(id_usuari, data_activitat, hora_inici, durada_minuts, tipus_activitat, calories, dispositiu)
+SET es_cap_setmana = DAYOFWEEK(data_activitat) IN (1, 7);
+
+-- Comprovar el funcionament
+SELECT * FROM log_insercions ORDER BY timestamp_insercio DESC; 
