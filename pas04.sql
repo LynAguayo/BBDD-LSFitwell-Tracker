@@ -1,3 +1,5 @@
+-- Evelyn Aguayo, Mariona Arenillas i Alexandra Sofronie
+
 -- Eliminar si ja existeix
 DROP TABLE IF EXISTS MD_activitat;
 

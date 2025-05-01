@@ -1,3 +1,5 @@
+-- Evelyn Aguayo, Mariona Arenillas i Alexandra Sofronie
+
 -- Creació dels usuaris
 CREATE USER 'lsfit_data_loader'@'%' IDENTIFIED BY 'loader123';
 CREATE USER 'lsfit_user'@'%' IDENTIFIED BY 'user123';

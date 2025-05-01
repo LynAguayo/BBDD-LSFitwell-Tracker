@@ -1,3 +1,5 @@
+-- Evelyn Aguayo, Mariona Arenillas i Alexandra Sofronie
+
 DELIMITER $$
 
 CREATE PROCEDURE actualitzar_MD_activitat()

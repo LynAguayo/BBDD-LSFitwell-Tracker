@@ -1,3 +1,5 @@
+-- Evelyn Aguayo, Mariona Arenillas i Alexandra Sofronie
+
 -- Crear una nova taula de registre per guardar les insercions a activitats_net:
 CREATE TABLE log_insercions (
     id_log INT AUTO_INCREMENT PRIMARY KEY, 

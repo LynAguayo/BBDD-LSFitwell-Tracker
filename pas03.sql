@@ -1,3 +1,5 @@
+-- Evelyn Aguayo, Mariona Arenillas i Alexandra Sofronie
+
 DROP TABLE IF EXISTS control_carregues;
 CREATE TABLE control_carregues (
     id INT AUTO_INCREMENT PRIMARY KEY,

@@ -1,3 +1,5 @@
+-- Evelyn Aguayo, Mariona Arenillas i Alexandra Sofronie
+
 -- Activar l'event scheduler
 SET GLOBAL event_scheduler = ON;
 

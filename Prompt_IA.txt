@@ -1,0 +1,13 @@
+-- Evelyn Aguayo, Mariona Arenillas i Alexandra Sofronie
+
+Genera un fitxer CSV amb 50 registres de dades d'activitat física simulades. Cada registre ha de tenir les següents columnes, separades per comes i sense espais entre elles:
+
+id_usuari: Genera un nombre enter aleatori entre 1 i 10 (inclosos).
+data_activitat: Genera una data aleatòria en format YYYY-MM-DD. Assegura't d'incloure algunes dates corresponents al dia d'ahir (30 d'abril de 2025).
+hora_inici: Genera una hora aleatòria en format HH:MM.
+durada_minuts: Genera un nombre enter aleatori entre 5 i 120 (inclosos).
+tipus_activitat: Tria aleatòriament una de les següents opcions: caminar, córrer, bicicleta, ioga, natació. Pots afegir més tipus d'activitat si ho desitges.
+calories: Genera un nombre enter aleatori entre 30 i 1000 (inclosos).
+dispositiu: Tria aleatòriament una de les següents opcions: smartwatch, mòbil, polsera.
+
+Inclou una línia d'encapçalament amb els noms de les columnes: id_usuari,data_activitat,hora_inici,durada_minuts,tipus_activitat,calories,dispositiu. Les dades de cada registre han d'estar en línies separades.
