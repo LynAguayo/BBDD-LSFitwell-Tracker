@@ -1,5 +1,4 @@
 -- Evelyn Aguayo, Mariona Arenillas i Alexandra Sofronie
-
 DROP DATABASE IF EXISTS fitwell;
 CREATE DATABASE fitwell;
 USE fitwell;
