@@ -1,5 +1,5 @@
+-- Evelyn Aguayo, Mariona Arenillas i Alexandra Sofronie
 USE fitwell;
-
 DROP TABLE IF EXISTS MD_activitat;
 CREATE TABLE MD_activitat (
     id_activitat INT AUTO_INCREMENT PRIMARY KEY,
@@ -16,7 +16,7 @@ INSERT INTO MD_activitat (nom, descripcio) VALUES
 
 ALTER TABLE activitats_net ADD COLUMN id_activitat INT;
 
-ALTER TABLE activitats_net ADD CONSTRAINT fk_tipus_activitat FOREIGN KEY (id_activitat) REFERENCES MD_activitat(id_activitat);
+ALTER TABLE activitats_net ADD CONSTRAINT fk_tipus_activitat FOREIGN KEY (id_activitat) REFERENCES MD_activitat(id_activitat) ON UPDATE CASCADE ON DELETE CASCADE;
 
 UPDATE activitats_net an
 JOIN MD_activitat ma ON an.tipus_activitat = ma.nom

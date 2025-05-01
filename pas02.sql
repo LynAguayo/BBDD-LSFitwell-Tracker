@@ -55,4 +55,4 @@ END //
 DELIMITER ;
 
 -- Executar el procedure
--- CALL netejar_dades_activitat();
+CALL netejar_dades_activitat();

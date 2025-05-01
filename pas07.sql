@@ -1,26 +1,25 @@
 -- Evelyn Aguayo, Mariona Arenillas i Alexandra Sofronie
 
--- Activar l'event scheduler
+USE fitwell;
 SET GLOBAL event_scheduler = ON;
 
--- Crear la base de dades de backup si no existeix
-CREATE DATABASE IF NOT EXISTS lsfit_backup;
+DROP DATABASE IF EXISTS fitwell_backup;
+CREATE DATABASE fitwell_backup;
 
--- Crear l'event de còpia setmanal
+DROP EVENT IF EXISTS backup_setmanal;
 DELIMITER //
-
 CREATE EVENT backup_setmanal
 ON SCHEDULE
     EVERY 1 WEEK
-    STARTS '2025-01-05 23:00:00'
-    ENDS '2025-12-28 23:00:00'
+    STARTS '2025-01-01 23:00:00'
+    ENDS '2025-12-31 23:00:00'
 DO
 BEGIN
     DECLARE done INT DEFAULT FALSE;
     DECLARE nom_taula VARCHAR(64);
     DECLARE cursor_taules CURSOR FOR
         SELECT table_name FROM information_schema.tables
-        WHERE table_schema = 'lsfit';
+        WHERE table_schema = 'fitwell';
 
     DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
 
@@ -35,8 +34,8 @@ BEGIN
         END IF;
 
         SET @sql = CONCAT(
-            'CREATE TABLE lsfit_backup.', nom_taula, '_', @data_sufix,
-            ' AS SELECT * FROM lsfit.', nom_taula
+            'CREATE TABLE fitwell_backup.', nom_taula, '_', @data_sufix,
+            ' AS SELECT * FROM fitwell.', nom_taula
         );
         PREPARE stmt FROM @sql;
         EXECUTE stmt;
